@@ -6,7 +6,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
-  <p class="notice"><%= notice %></p>
+
   <p class="alert"><%= alert %></p>
 </head>
 <body>
@@ -17,6 +17,10 @@
   <% if alert %>
     <p class="alert alert-danger"><%= alert %></p>
   <% end %>
+
+  <ul class="nav">
+      <li class="active"><a href="/projects">Portfolio</a></li>
+  </ul>
 
   <p class="navbar-text pull-right">
   <% if user_signed_in? %>
