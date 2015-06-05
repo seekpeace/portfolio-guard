@@ -79,7 +79,7 @@ Rails.application.configure do
 
   config.action_mailer.raise_delivery_errors = true
 
-  config.action_mailer.default_url_options = { host: 'https://secret-ridge-9782.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'https://portfolio-guard.herokuapp.com' }
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
