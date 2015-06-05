@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Listing Projects</h1>
 
 <table>
@@ -26,40 +24,4 @@
   </tbody>
 </table>
 
-
-<%    %>
-project.url
-
-Net:HTTPResponse
-======
-
-
-
-<% @projects.each do |project| %>
-<%# check if http:// was in the url if not add it in there %>
-<% project.url.insert(0, "http://") unless(project.url.match(/^http\:\/\//)) %>
-
-<%#	response = Net::HTTP.get_response(URI.parse(project.url.to_s)) %>
-<%	response = Net::HTTP.get_response(project.url) %>
-
-	# Check the response code and send an email if the code is bad
-	if response.code =~ /2|3\d{2}/
-
-  then
-		from = "admin@example.com"
-		message = "From: admin@example.com\nSubject: #{project.url} is not up.\n\n#{url} - #{response.code} -please check and confirm"
-		begin
-			Net::SMTP.start('localhost',25 , 'example.com') do |smtp|
-			smtp.send_message(message, from, emails)
-		end
-		rescue Exception => e
-			print "Exception occured: " + e
-		end
-	end
-  =============
-
-
-
-<br>
-
-<%= link_to 'New Project', new_project_path %>
+<%= link_to 'Register App', new_project_path %>

@@ -4,15 +4,17 @@ class UserMailer < ApplicationMailer
     def down_email(project)
 
       @project = project
-
-      puts "#{@project.user_id}"
+      
+      # puts "#{@project.user_id}"
       @user = User.find(@project.user_id)
-      puts "#{@user.email}"
+      # puts "#{@user.email}"
       # @user  = User.find(project.user_id)
       # @url  = Project.url
       @url  = @project.url
-      puts "#{@url}"
-      puts "now going to send email below"
+      @url.insert(0, "http://") unless(@url.match(/^http\:\/\//))
+
+      # puts "#{@url}"
+      # puts "now going to send email below"
 
       mail(to: @user.email, subject: 'Your site is down')
 
