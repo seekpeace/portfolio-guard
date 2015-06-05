@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'rails_12factor', group: :production
 gem 'figaro'
 gem 'pry'
 gem 'pry-doc'
